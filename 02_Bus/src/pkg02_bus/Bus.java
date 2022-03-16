@@ -15,12 +15,16 @@ public class Bus {
     }
     
     public Bus(int seats) {
-        this.seats = seats;        
+        this.seats = seats;
+        route = 0;   
+        company = "";
         passengers = 0;
     }
     
     public Bus() {
-        seats = 40;        
+        seats = 40;
+        route = 0;   
+        company = "";
         passengers = 0;        
     }
 
@@ -53,12 +57,22 @@ public class Bus {
         return String.format("Autobus číslo %d společnosti %s s počtem sedadel %d veze %d cestujících.", route, company, seats, passengers);
     }
     
+    /**
+     * Výstup pasažérů
+     * @param count
+     * @return Vrací počet pasažérů, kteří skutečně vystoupili.
+     */
     public int getOff(int count) {
         int realCount = (count > passengers) ? passengers : count;
         passengers -= realCount;
         return realCount;
     }
     
+    /**
+     * Nástup pasažérů
+     * @param count
+     * @return Vrací počet pasažérů, kteří skutečně nastoupili.
+     */
     public int getOn(int count) {
         int freeSeats = seats - passengers;
         int realCount = (count > freeSeats) ? freeSeats : count;
