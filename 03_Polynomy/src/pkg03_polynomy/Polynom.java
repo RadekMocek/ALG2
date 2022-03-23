@@ -93,9 +93,11 @@ public class Polynom {
         
         Polynom polA = Polynom.getInstanceDownwardly(1,2,3);
         Polynom polB = Polynom.getInstanceDownwardly(5,6,7,8);
-        Polynom sum = PolynomTools.Sum(polA, polB);
-        Polynom mul = PolynomTools.Multiply(polA, polB);
+        Polynom sum = PolynomTools.sum(polA, polB);
+        Polynom mul = PolynomTools.multiply(polA, polB);
         System.out.println(polA+"\n"+polB+"\n-----");
         System.out.println(mul);
+        System.out.println("-----\n");
+        System.out.println(PolynomTools.sumAll(polA, polA, polA));
     }
 }

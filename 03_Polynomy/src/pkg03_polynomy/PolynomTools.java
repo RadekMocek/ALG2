@@ -1,8 +1,10 @@
 package pkg03_polynomy;
 
-public class PolynomTools {
+public final class PolynomTools {
     
-    public static Polynom Sum(Polynom a, Polynom b) {        
+    private PolynomTools() {}
+    
+    public static Polynom sum(Polynom a, Polynom b) {        
         int lenA = a.getDegree() + 1;
         int lenB = b.getDegree() + 1;
         
@@ -18,7 +20,15 @@ public class PolynomTools {
         return Polynom.getInstanceUpwardly(sum);
     }
     
-    public static Polynom Multiply(Polynom a, Polynom b) {
+    public static Polynom sumAll(Polynom... pol) {
+        Polynom polSum = pol[0];
+        for (int i = 1; i < pol.length; i++) {
+            polSum = sum(polSum, pol[i]);
+        }
+        return polSum;
+    }
+    
+    public static Polynom multiply(Polynom a, Polynom b) {
         int lenA = a.getDegree() + 1;
         int lenB = b.getDegree() + 1;
         
