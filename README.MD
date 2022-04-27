@@ -1,5 +1,23 @@
 # Džáva
 
+## Práce se soubory
+
+### Dělení
+
+* Textový
+  * Read
+    * BufferedReader
+    * Scanner
+    * (InputStreamReader)
+  * Write
+    * PrintWriter
+    * (BufferedWriter, InputStreamWriter)
+* Binární soubor
+  * Read
+    * DataInputStream
+  * Write
+    * DataOutputStream
+
 ## Inheritance/Interface
 
 ### Kompozice
